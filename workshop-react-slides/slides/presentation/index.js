@@ -33,67 +33,34 @@ import preloader from "spectacle/lib/utils/preloader";
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
+// Import custom component
+import Interactive from "../assets/interactive";
+
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-    logo: require("../assets/HACKATHON.png"),
-    team1: require("../assets/team/1.jpg"),
-    team2: require("../assets/team/2.jpg"),
-    team3: require("../assets/team/3.jpg"),
-    team4: require("../assets/team/4.jpg"),
-    team5: require("../assets/team/5.jpg"),
-    team6: require("../assets/team/6.jpg"),
-    devPeople: require("../assets/made-for-developers.jpg"),
-    hack1: {
-        pic1: require("../assets/hack1-foodhacks/1.jpg"),
-        pic2: require("../assets/hack1-foodhacks/2.jpg"),
-        pic3: require("../assets/hack1-foodhacks/3.jpg"),
-        pic4: require("../assets/hack1-foodhacks/4.jpg"),
-        pic5: require("../assets/hack1-foodhacks/5.jpg"),
-        pic6: require("../assets/hack1-foodhacks/6.jpg"),
-        pic7: require("../assets/hack1-foodhacks/7.jpg"),
-        pic8: require("../assets/hack1-foodhacks/8.jpg"),
-    },
-    hack2: {
-        pic1: require("../assets/hack2-mediahackday/1.jpg"),
-        pic2: require("../assets/hack2-mediahackday/2.jpg"),
-        pic3: require("../assets/hack2-mediahackday/3.jpg"),
-        pic4: require("../assets/hack2-mediahackday/4.jpg"),
-        pic5: require("../assets/hack2-mediahackday/5.jpg"),
-        pic6: require("../assets/hack2-mediahackday/6.jpg"),
-    },
-    hack3: {
-        pic1: require("../assets/hack3-haxelthon2/1.jpg"),
-        pic2: require("../assets/hack3-haxelthon2/2.jpg"),
-        pic3: require("../assets/hack3-haxelthon2/3.jpg"),
-        pic4: require("../assets/hack3-haxelthon2/4.jpg"),
-        pic5: require("../assets/hack3-haxelthon2/5.jpg"),
-        pic6: require("../assets/hack3-haxelthon2/6.jpg"),
-        pic7: require("../assets/hack3-haxelthon2/7.jpg"),
-        pic8: require("../assets/hack3-haxelthon2/8.jpg"),
-        pic9: require("../assets/hack3-haxelthon2/9.jpg"),
-        pic10: require("../assets/hack3-haxelthon2/10.jpg"),
-        pic11: require("../assets/hack3-haxelthon2/11.jpg"),
-        pic12: require("../assets/hack3-haxelthon2/12.jpg"),
-        pic13: require("../assets/hack3-haxelthon2/13.jpg"),
-        pic14: require("../assets/hack3-haxelthon2/14.jpg"),
-        pic15: require("../assets/hack3-haxelthon2/15.jpg"),
-        pic16: require("../assets/hack3-haxelthon2/16.jpg"),
-        pic17: require("../assets/hack3-haxelthon2/17.jpg"),
-    }
+    city: require("../assets/city.jpg"),
+    kat: require("../assets/kat.png"),
+    logo: require("../assets/formidable-logo.svg"),
+    markdown: require("../assets/markdown.png"),
+
+    team1: require("../assets/team-andreas.jpg"),
+    team2: require("../assets/team-sebastian.jpg"),
+    reactlogo: require("../assets/react-logo.svg"),
+
+    meme1: require("../assets/react_meme.jpg"),
+    meme2: require("../assets/react_meme2.jpg"),
+    meme3: require("../assets/react_meme3.jpg"),
+    meme4: require("../assets/react_meme4.jpg")
 };
 
 preloader(images);
 
 const theme = createTheme({
-    primary: "#000000",
-    secondary: "#ffffff",
-    tertiary: "#ff4081",
-    ideasPink: "#FF21FC",
-    ideasBlue: "#3F90FF",
+    primary: "#ff4081"
 });
 
 export default class Presentation extends React.Component {
@@ -101,111 +68,259 @@ export default class Presentation extends React.Component {
         return (
             <Spectacle theme={theme}>
                 <Deck transition={["zoom", "slide"]} transitionDuration={500} progress="pacman">
-
-                    <Slide transition={["slide"]} bgImage={images.devPeople.replace("/", "")} bgDarken={0.75}>
-                        <Image width="100%" src={images.logo.replace("/", "")}/>
-                    </Slide>
-
                     <Slide transition={["zoom"]} bgColor="primary">
-                        <Heading size={1} fit caps lineHeight={1} textColor="ideasPink">
-                            AS Ideas Engineering
+                        <Heading size={1} fit caps lineHeight={1} textColor="black">
+                            React
+                        </Heading>
+                        <Heading size={1} fit caps>
+                            JavaScript best practices, re-defined
                         </Heading>
                         <br />
                         <br />
-                        <Text textSize="0.9em" bold textColor="ideasBlue"><i className="fa fa-twitter" aria-hidden="true"></i> @as_ideas</Text>
-                        <Text textSize="0.9em" bold textColor="ideasBlue"><i className="fa fa-link" aria-hidden="true"></i> asideas.de/slides/techbreakfast-hackathon-slides</Text>
-                        <Text textSize="0.9em" bold textColor="ideasBlue"><i className="fa fa-github" aria-hidden="true"></i> github.com/as-ideas/techbreakfast-hackathon-slides</Text>
+                        <Text textSize="0.9em" bold><i className="fa fa-twitter" aria-hidden="true"></i> @as_ideas</Text>
+                        <Text textSize="0.9em" bold><i className="fa fa-link" aria-hidden="true"></i> asideas.de/slides/workshop-react-slides</Text>
+                        <Text textSize="0.9em" bold><i className="fa fa-github" aria-hidden="true"></i> github.com/CanardSauvage/slides</Text>
                     </Slide>
 
-                    <Slide transition={["zoom", "fade"]} bgColor="ideasPink" bgDarken={0.75}>
+                    <Slide transition={["zoom", "fade"]} bgColor="primary">
+                        <Heading caps fit>Axel Springer Ideas Engineering</Heading>
                         <Layout>
                             <Fill>
+                                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                                    Andreas
+                                </Heading>
                                 <Image className="avatar" src={images.team1.replace("/", "")} margin="0px auto 40px" height="293px"/>
                             </Fill>
                             <Fill>
+                                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                                    Sebastian
+                                </Heading>
                                 <Image className="avatar" src={images.team2.replace("/", "")} margin="0px auto 40px" height="293px"/>
                             </Fill>
-                            <Fill>
-                                <Image className="avatar" src={images.team3.replace("/", "")} margin="0px auto 40px" height="293px"/>
-                            </Fill>
-                        </Layout>
-                        <Layout>
-                            <Fill>
-                                <Image className="avatar" src={images.team4.replace("/", "")} margin="0px auto 40px" height="293px"/>
-                            </Fill>
-                            <Fill>
-                                <Image className="avatar" src={images.team5.replace("/", "")} margin="0px auto 40px" height="293px"/>
-                            </Fill>
-                            <Fill>
-                                <Image className="avatar" src={images.team6.replace("/", "")} margin="0px auto 40px" height="293px"/>
-                            </Fill>
                         </Layout>
                     </Slide>
 
                     <Slide>
-                        <Heading>What is a Hackathon?</Heading>
-                        <Appear><Heading textColor="white">And why should I go there?</Heading></Appear>
-                    </Slide>
-
-                    <Slide bgColor="white" transition={["zoom", "fade"]}>
-                        <Heading textColor="ideasBlue">How does it work?</Heading>
-                        <Appear><Heading textColor="black">And what am I doing there?</Heading></Appear>
+                        <Heading>Should I Use React?</Heading>
+                        <Appear><Heading textColor="black">Short answer: yes.</Heading></Appear>
+                        <br />
+                        <Appear><Heading size={2} fit textColor="white">Long answer: unfortunately, yes, for most things.</Heading></Appear>
                     </Slide>
 
                     <Slide>
-                        <Heading>What we did!</Heading>
-                        <Appear><Heading textColor="white">And some photos.</Heading></Appear>
+                        <Image src={images.reactlogo} width="300px"/>
+                        <Heading size={1} fit caps lineHeight={1} textColor="black">
+                            React.js
+                        </Heading>
                     </Slide>
-
-                    <Slide bgColor="ideasPink" transition={["zoom", "fade"]}>
-                        <Heading textColor="black">{'food{hacks}'}</Heading>
-                    </Slide>
-
-                    <Slide bgImage={images.hack1.pic1.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack1.pic2.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack1.pic3.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack1.pic4.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack1.pic5.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack1.pic6.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack1.pic7.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack1.pic8.replace("/", "")}> </Slide>
-
-                    <Slide bgColor="ideasPink" transition={["zoom", "fade"]}>
-                        <Heading textColor="black">Media Hackday</Heading>
-                    </Slide>
-
-                    <Slide bgImage={images.hack2.pic1.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack2.pic2.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack2.pic3.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack2.pic4.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack2.pic5.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack2.pic6.replace("/", "")}> </Slide>
-
-                    <Slide bgColor="ideasPink" transition={["zoom", "fade"]}>
-                        <Heading textColor="black">Axel Springer Hackday</Heading>
-                        <Heading textColor="white">Haxelthon2</Heading>
-                    </Slide>
-
-                    <Slide bgImage={images.hack3.pic1.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic2.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic3.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic4.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic5.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic6.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic7.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic8.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic9.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic10.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic11.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic12.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic13.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic14.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic15.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic16.replace("/", "")}> </Slide>
-                    <Slide bgImage={images.hack3.pic17.replace("/", "")}> </Slide>
 
                     <Slide>
-                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/_jnPj9mP62E" frameBorder="0" allowFullScreen></iframe>
+                        <Heading>Is it another case of</Heading>
+                        <br/>
+                        <Appear><Heading size={1} caps fit textColor="secondary">My MVC is better than your MVC</Heading></Appear>
+                        <Appear><Heading size={1} caps fit textColor="tertiary">My MVVM is better than your MVC</Heading></Appear>
+                        <Appear><Heading size={1} caps fit textColor="secondary">My MVC is better than your MVVM</Heading></Appear>
+                        <br/>
+                        <Appear><Heading>?</Heading></Appear>
+                    </Slide>
+
+                    <Slide>
+                        <Heading>React hast no...</Heading>
+                        <Layout >
+                            <Appear>
+                                <Fill>
+                                    <Heading size={5} caps textColor="secondary">... controller</Heading>
+                                    <Heading size={5} caps textColor="secondary">... directives</Heading>
+                                    <Heading size={5} caps textColor="secondary">... templates</Heading>
+                                    <Heading size={5} caps textColor="secondary">... global event listeners</Heading>
+                                    <Heading size={5} caps textColor="secondary">... models</Heading>
+                                    <Heading size={5} caps textColor="secondary">... view models</Heading>
+                                </Fill>
+                            </Appear>
+
+                        </Layout>
+                        <Appear><Heading>Just Components</Heading></Appear>
+                    </Slide>
+
+                    <Slide transition={["slide"]} bgColor="black">
+                        <BlockQuote>
+                            <Quote>Angular is the best implementation of the wrong idea</Quote>
+                        </BlockQuote>
+                        <Appear>
+                            <BlockQuote>
+                                <Quote>React is the first implementation of the right idea</Quote>
+                            </BlockQuote>
+                        </Appear>
+                        <Appear>
+                            <Text textColor="white">React challenges established best practices in traditional MV* frameworks</Text>
+                        </Appear>
+                    </Slide>
+
+                    <Slide transition={["slide"]}>
+                        <Heading textColor="white">Build components, not templates</Heading>
+                        <br />
+                        <Appear><Text>UI description and UI logic are tightly coupled</Text></Appear>
+                        <Appear><Text>... and can be colocated</Text></Appear>
+                        <Appear><Text>Full power of JavaScript to express UI</Text></Appear>
+                        <Appear><Text>No magical data binding</Text></Appear>
+                        <Appear><Text>No model dirty checking</Text></Appear>
+                    </Slide>
+
+                    <Slide bgColor="black">
+                        <BlockQuote >
+                            <Quote>jQuery makes imperative DOM manipulation easy</Quote>
+                        </BlockQuote>
+                        <Appear>
+                            <BlockQuote>
+                                <Quote>React makes DOM manipulation unnecessary</Quote>
+                            </BlockQuote>
+                        </Appear>
+                    </Slide>
+
+                    <Slide transition={["slide"]} bgColor="black">
+                        <Heading fit textColor="white">Virtual DOM</Heading>
+                        <Appear><Heading caps fit textColor="primary">Re-render everything on every update</Heading></Appear>
+                        <Appear><Heading caps fit textColor="white">Just like the 90's Full-Page refresh!</Heading></Appear>
+                        <List textColor="white">
+                            <Appear><ListItem>Create lightweight description of component UI</ListItem></Appear>
+                            <Appear><ListItem>Diff it with the old one</ListItem></Appear>
+                            <Appear><ListItem>Compute minimal set of changes to apply to the DOM</ListItem></Appear>
+                            <Appear><ListItem>Batch execute all updates</ListItem></Appear>
+                        </List>
+                    </Slide>
+
+                    <Slide>
+                        <Heading fit>Rendering</Heading>
+                        <br />
+                        <Text textColor="black">
+                            <pre className="pre-with-graphic">┌──────┐          ┌───────┐           ┌───────────┐         ┌───────┐</pre>
+                            <pre className="pre-with-graphic">│state │ rerender │virtual│  diff to  │collect DOM│         │Browser│</pre>
+                            <pre className="pre-with-graphic">│change│────UI───>│  DOM  │─previous─>│ mutations │─update─>│  DOM  │</pre>
+                            <pre className="pre-with-graphic">└──────┘          └───────┘           └───────────┘         └───────┘</pre>
+                        </Text>
+                        <br />
+                        <Appear><Heading size={2} caps fit textColor="secondary">Inspired by DOOM3</Heading></Appear>
+                    </Slide>
+
+
+                    <Slide transition={["slide"]} bgColor="black">
+                        <Image src={images.meme2.replace("/", "")}/>
+                    </Slide>
+
+                    <CodeSlide transition={[]}
+                               style="max-width:90%"
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/hello_world.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Hello World"},
+                                   {loc: [3, 5], note: "Import React"},
+                                   {loc: [8, 9], note: "Mounting point"},
+                                   {loc: [11, 15], note: "Rendering"},
+                                   {loc: [9, 10], note: "wait..."},
+                                   {loc: [5, 6], note: "JSX?"}
+                               ]}/>
+
+                    <Slide>
+                        <Heading>JSX is not a template language</Heading>
+                        <Appear><Heading textColor="black">JSX is simply an alternate JavaScript syntax</Heading></Appear>
+                    </Slide>
+
+                    <CodeSlide transition={[]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/minimal_code.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "JSX"},
+                                   {loc: [1, 5], note: "JSX"},
+                                   {loc: [7, 11], note: "JS"},
+                                   {loc: [13, 16]},
+                                   {loc: [17, 25]}
+                               ]}/>
+
+                    <Slide>
+                        <Heading>React + ES2015 = <i className="fa fa-heart" aria-hidden="true"></i></Heading>
+                        <Layout >
+                            <Fill>
+                                <List>
+                                    <ListItem>Modules</ListItem>
+                                    <ListItem>Classes</ListItem>
+                                    <ListItem>Scoped Variables</ListItem>
+                                    <ListItem>Arrow Functions</ListItem>
+                                    <ListItem>Template Strings</ListItem>
+                                    <ListItem>Spread Operator</ListItem>
+                                    <ListItem>Destructuring</ListItem>
+                                </List>
+                            </Fill>
+                            <Fill>
+                                <List>
+                                    <ListItem>Default Values</ListItem>
+                                    <ListItem>Rest Parameters</ListItem>
+                                    <ListItem>for-of Iterator</ListItem>
+                                    <ListItem>Symbols</ListItem>
+                                    <ListItem>Promises</ListItem>
+                                    <ListItem>...</ListItem>
+                                </List>
+                            </Fill>
+                        </Layout>
+                        <Appear><Heading>IE?</Heading></Appear>
+                    </Slide>
+
+                    <Slide>
+                        <Image src={images.meme4.replace("/", "")} width="40vw"/>
+                        <Heading>Meet Babel</Heading>
+                    </Slide>
+
+                    <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+                        <Heading>Do you know Gulp or Grunt?</Heading>
+                        <Appear><CodePane
+                            lang="js"
+                            source={require("raw!./code/webpack.example")}
+                        /></Appear>
+                    </Slide>
+
+                    <Slide transition={["slide"]} bgColor="black">
+                        <Heading size={2} textColor="white">React, Components, ES2015, JSX, Babel, Webpack, ...</Heading>
+                        <br />
+                        <Appear><Image src={images.meme3.replace("/", "")}/></Appear>
+                    </Slide>
+
+                    <Slide transition={["spin"]}>
+                        <Heading size={2} textColor="white" fit caps>Properties</Heading>
+                        <Heading size={5} textColor="black" fit caps>Properties passed by the parent to the child are available in 'this.props' in the child</Heading>
+                        <Heading size={5} textColor="black" fit caps>Properties are immutable</Heading>
+                    </Slide>
+
+                    <Slide transition={["slide"]}>
+                        <Heading size={2} textColor="white" fit caps>State</Heading>
+                        <Heading size={5} textColor="black" fit caps>State change causes rerendering</Heading>
+                    </Slide>
+
+
+                    <Slide transition={["slide"]} bgColor="black">
+                        <Heading caps fit textColor="white">React native or Electron</Heading>
+                        <Image src={images.meme1.replace("/", "")}/>
+                        <Heading caps fit textColor="primary">You are already using it on your MAC</Heading>
+                    </Slide>
+
+                    <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
+                        <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
+                        <Heading size={2} caps fit textColor="primary" textFont="primary">
+                            Wait what?
+                        </Heading>
+                    </Slide>
+
+                    <Slide transition={["slide"]} bgColor="black">
+                        <Appear><Heading caps fit textColor="primary">Components, not templates</Heading></Appear>
+                        <Appear><Heading caps fit textColor="white">Re-render, don't mutate</Heading></Appear>
+                        <Appear><Heading caps fit textColor="primary">Virtual DOM = easy & fast</Heading></Appear>
+                    </Slide>
+
+
+                    <Slide transition={["spin", "slide"]} bgColor="tertiary">
+                        <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
+                            Show me some real code
+                        </Heading>
                     </Slide>
                 </Deck>
             </Spectacle>
