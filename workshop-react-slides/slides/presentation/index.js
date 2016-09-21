@@ -108,7 +108,7 @@ export default class Presentation extends React.Component {
                     </Slide>
 
                     <Slide>
-                        <Image src={images.reactlogo} width="300px"/>
+                        <Image src={images.reactlogo.replace("/", "")} width="300px"/>
                         <Heading size={1} fit caps lineHeight={1} textColor="black">
                             React.js
                         </Heading>
