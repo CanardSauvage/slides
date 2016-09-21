@@ -1,0 +1,27 @@
+class Parent extends React.Component {
+  executeTrade: function() {
+    console.log('Executed');
+  }
+
+  render() {
+	return (
+	  <ExecuteButton onExecute={this.executeTrade} />
+	);
+  }
+}
+
+
+class Button extends React.Component {
+  render() {
+	return (
+	  <button onClick={this.onClick}>
+	    {buttonValue}
+	  </button>
+    );
+  }
+
+  onClick() {
+    this.props.onExecute({});
+  }
+}
+

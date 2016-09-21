@@ -1,0 +1,5 @@
+const name = 'Sean';
+
+console.log(`${name} loves
+string interpolation
+${'so much'.toUpperCase()}`)

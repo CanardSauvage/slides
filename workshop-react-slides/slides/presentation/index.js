@@ -266,18 +266,39 @@ export default class Presentation extends React.Component {
                         <Appear><Heading>IE?</Heading></Appear>
                     </Slide>
 
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/polyfill.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Polyfill to the rescue"},
+                                   {loc: [0, 1], note: "the easy way..."},
+                                   {loc: [2, 8], note: "... or do it yourself!"}
+                               ]}/>
+
                     <Slide>
                         <Image src={images.meme4.replace("/", "")} width="40vw"/>
                         <Heading>Meet Babel</Heading>
                     </Slide>
 
                     <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-                        <Heading>Do you know Gulp or Grunt?</Heading>
-                        <Appear><CodePane
-                            lang="js"
-                            source={require("raw!./code/webpack.example")}
-                        /></Appear>
+                        <Heading textColor="white">Do you know Gulp or Grunt?</Heading>
+                        <br />
+                        <Appear><Heading textColor="black" fit caps>And do you really like it?</Heading></Appear>
                     </Slide>
+
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/webpack.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Webpack Example"},
+                                   {loc: [0, 1], note: "import webpack (it needs to be defined)"},
+                                   {loc: [3, 4], note: "the entry point"},
+                                   {loc: [4, 8], note: "the ouput path"},
+                                   {loc: [10, 13], note: "loaders"},
+                               ]}/>
 
                     <Slide transition={["slide"]} bgColor="black">
                         <Heading size={2} textColor="white">React, Components, ES2015, JSX, Babel, Webpack, ...</Heading>
@@ -316,10 +337,143 @@ export default class Presentation extends React.Component {
                         <Appear><Heading caps fit textColor="primary">Virtual DOM = easy & fast</Heading></Appear>
                     </Slide>
 
+                    <Slide transition={["spin", "slide"]} bgColor="tertiary">
+                        <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
+                            Time for Hello World!
+                        </Heading>
+                    </Slide>
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/es6/01.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Modules"},
+                                   {loc: [0, 7], note: "my-modules.js"},
+                                   {loc: [8, 15], note: "use-module.js"}
+                               ]}/>
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/es6/02.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Classes"},
+                                   {loc: [0, 5], note: "a base class"},
+                                   {loc: [6, 14], note: "a sub class"},
+                                   {loc: [15, 17], note: "the new new"}
+                               ]}/>
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/es6/03.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Scoped Variables"},
+                                   {loc: [1, 2], note: "'let' it be"},
+                                   {loc: [3, 7], note: "a scope"},
+                                   {loc: [8, 10], note: "tell me the truth"},
+                                   {loc: [12, 13], note: "what now?"}
+                               ]}/>
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/es6/04.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Arrow Functions"},
+                                   {loc: [0, 1], note: "define a new object"},
+                                   {loc: [4, 7], note: "Arrow Head"},
+                                   {loc: [9, 10], note: "does this really work?"}
+                               ]}/>
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/es6/05.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Template Strings"},
+                                   {loc: [2, 5], note: "Note the backtick --> `"}
+                               ]}/>
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/es6/06.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Default values"},
+                                   {loc: [0, 3], note: "define a function"},
+                                   {loc: [4, 7], note: "call it"}
+                               ]}/>
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/es6/07.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Spread Operator"},
+                                   {loc: [0, 3], note: "define your values"},
+                                   {loc: [3, 6], note: "define a function"},
+                                   {loc: [6, 7], note: "call it"}
+                               ]}/>
+
+                    <Slide transition={["spin", "slide"]} bgColor="primary">
+                        <Heading caps fit textColor="secondary">Component Lifecycle</Heading>
+                        <List>
+                            <ListItem>componentWillMount()</ListItem>
+                            <ListItem>componentDidMount()</ListItem>
+                            <ListItem>componentWillReceiveProps()</ListItem>
+                            <ListItem>shouldComponentUpdate()</ListItem>
+                            <ListItem>componentWillUpdate()</ListItem>
+                            <ListItem>componentDidUpdate()</ListItem>
+                            <ListItem>componentWillUnmount()</ListItem>
+                        </List>
+                    </Slide>
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/wrapping_another_lib.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Wrapping another lib"},
+                                   {loc: [0, 2], note: "import the lib"},
+                                   {loc: [4, 9], note: "lifecyle method"},
+                                   {loc: [5, 8], note: "the native call"},
+                                   {loc: [10, 13], note: "the native call"},
+                                   {loc: [15, 16], note: "mounting"}
+                               ]}/>
+
+
+                    <Slide transition={["slide"]} bgColor="black">
+                        <Appear><Heading caps fit textColor="white">Event Handlers = Component Communication</Heading></Appear>
+                        <Appear><Heading caps fit textColor="primary">This is how the data goes upwards</Heading></Appear>
+                        <Appear><Heading caps fit textColor="white">Note: Only if you are building small to medium applications React on it's own might be enough.</Heading></Appear>
+                    </Slide>
+
+                    <CodeSlide transition={["slide"]}
+                               lang="js"
+                               className="codeslide"
+                               code={require("raw!./code/event_handlers.example")}
+                               ranges={[
+                                   {loc: [0, 0], title: "Event handlers"},
+                                   {loc: [0, 12], note: "parent"},
+                                   {loc: [13, 27], note: "button"},
+                                   {loc: [1, 4], note: "define the callback method"},
+                                   {loc: [7, 8], note: "give it to the button as property"},
+                                   {loc: [22, 25], note: "define the onclick event"},
+                                   {loc: [16, 19], note: "mount it to the button"},
+                               ]}/>
+
+                    <Slide transition={["slide"]}>
+                        <Heading textColor="white">Flux</Heading>
+                        <br />
+                        <Appear><Text>Architecture for data flow</Text></Appear>
+                        <Appear><Text>One direction flow</Text></Appear>
+                    </Slide>
 
                     <Slide transition={["spin", "slide"]} bgColor="tertiary">
                         <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-                            Show me some real code
+                            Show me some real code!
                         </Heading>
                     </Slide>
                 </Deck>

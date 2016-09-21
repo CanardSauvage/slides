@@ -1,0 +1,10 @@
+const inventory = {
+  prefix: 'Item: ',
+  items: ['Thing 1', 'Thing 2'],
+  listItems() {
+    this.items.forEach(item => {
+      console.log(this.prefix + item)
+     })
+  }
+}
+inventory.listItems();
