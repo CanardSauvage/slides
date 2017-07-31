@@ -1,0 +1,5 @@
+{
+    var huch = "Ich bin noch da";
+}
+
+console.log(huch); // Ich bin noch da

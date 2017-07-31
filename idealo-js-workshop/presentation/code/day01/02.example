@@ -1,0 +1,16 @@
+var string = "String";
+typeof string === "string";
+
+var int = 1;
+typeof int === "number";
+
+var float = 1.0;
+typeof float === "number";
+
+var bool = true;
+typeof bool === "boolean";
+
+var func = function() {};
+typeof func === "function";
+
+typeof michGibtEsNicht === "undefined";

@@ -1,0 +1,6 @@
+var array = ["a", "b", "c"];
+var el = array[2];
+array[1] = 20;
+typeof array === "object";
+// fügt die 4 am Ende hinzu
+array.push(4);

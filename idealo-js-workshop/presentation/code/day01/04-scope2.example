@@ -1,0 +1,5 @@
+(function () {
+    var achso = "Ich bin weg";
+}());
+
+console.log(achso); // ReferenceError

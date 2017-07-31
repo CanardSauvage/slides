@@ -1,0 +1,13 @@
+// my-module.js
+export function DoSomething() {
+ console.log('Did it')
+}
+export function DoSomethingElse() {
+ console.log('No')
+}
+// use-module.js
+import * as myFuncs from './my-module'
+import { doSomething } from './my-module'
+myFuncs.doSomething()
+myFuncs.doSomethingElse()
+doSomething()

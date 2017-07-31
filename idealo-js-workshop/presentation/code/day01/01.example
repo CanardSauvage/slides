@@ -1,0 +1,9 @@
+var map = {
+    feld1: 'Huhu',
+    zweites$Feld: "Auch sowas geht!"
+};
+console.log(typeof map === "object"); // true
+console.log(map.feld1); // Huhu
+console.log(map["zweites$Feld"]); // Auch sowas geht!
+
+map.hund = "Ganz neu geht auch";

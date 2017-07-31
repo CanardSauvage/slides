@@ -1,0 +1,24 @@
+// With JSX
+React.render(
+    <div>Hello, world!</div>,
+    document.body
+);
+
+// With pure JS
+React.render(
+    React.createElement('div', {}, 'Hello, world!'),
+    document.body
+);
+// React.createElement(elementNameOrClass, props, children...)
+
+<div id="greeting-container" className="container">
+  <Greeting name="World"/>
+</div>
+
+React.createElement("div",
+  {
+    id: "greeting-container",
+    className: "container"
+  },
+  React.createElement(Greeting, {name: "World"})
+)
