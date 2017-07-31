@@ -1,0 +1,12 @@
+var obj = {
+    field: 10,
+    log: function() {
+        console.log(this.field);
+    }
+};
+
+obj.log(); // 10
+
+var field = "Reingelegt";
+obj.log.call(this);
+// => ???
