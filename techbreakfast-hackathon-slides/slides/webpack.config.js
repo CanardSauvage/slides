@@ -43,10 +43,10 @@ module.exports = {
             }
         }, {
             test: /\.css$/,
-            loaders: ["style", "raw"],
+            loaders: ["style-loader", "raw-loader"],
             include: __dirname
         },
-            {test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/, loader: 'file?name=assets/[path][name].[ext]?[hash]&context=./assets/'},
+            {test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/, loader: 'file-loader?name=assets/[path][name].[ext]?[hash]&context=./assets/'},
 
             //   {
             //   test: /\.svg$/,
