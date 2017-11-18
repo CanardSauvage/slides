@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function scopeIt() {
+            let x = 'foo';
+
+            {
+                const x = 'bar';
+                console.log(x);
+                //x = 'noreassign'
+            }
+
+            // let x = 'nodupe'
+            console.log(x);
+        }
+
+        scopeIt();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
